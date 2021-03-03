@@ -3,7 +3,7 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update
-RUN apt install -y libsndfile-dev gcc python3-dev python3-pip
+RUN apt install -y libsndfile-dev gcc python3-dev python3-pip ffmpeg
 
 RUN python3 -m pip install --prefix='/usr/local' pydub logbook tensorflow inaspeechsegmenter sndfile
 
