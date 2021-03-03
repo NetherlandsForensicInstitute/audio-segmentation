@@ -1,7 +1,7 @@
 from collections import defaultdict
 from tempfile import NamedTemporaryFile
 
-import inaSpeechSegmenter as inaSpeechSegmenter
+import inaSpeechSegmenter
 import pydub
 from hansken_extraction_plugin.api.author import Author
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
@@ -24,7 +24,7 @@ class AudioSegmentation(ExtractionPlugin):
             author=Author('FBDA', 'fbda@nfi.nl', 'NFI'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='https://hansken.org',
-            matcher='(file.extension=wav OR file.extension=mp3) AND $data.type=raw'
+            matcher='(file.extension=wav OR file.extension=mp3) NOT file.misc.audioClassification AND $data.type=raw'
         )
         log.debug(f'returning plugin info: {plugin_info}')
         return plugin_info
