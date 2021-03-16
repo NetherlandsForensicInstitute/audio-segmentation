@@ -19,7 +19,7 @@ class AudioSegmentation(ExtractionPlugin):
         plugin_info = PluginInfo(
             self,
             name='Audio Segmentation',
-            version='2021.3.3',
+            version='2021.3.16',
             description='Audio Segmentation for Hansken',
             author=Author('FBDA', 'fbda@nfi.nl', 'NFI'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,

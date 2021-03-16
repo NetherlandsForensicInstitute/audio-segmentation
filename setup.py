@@ -3,10 +3,10 @@ from setuptools import setup
 
 
 package_name = "audiosegmentation"
-version_string = "2021.3.3"
+version_string = "2021.3.16"
 
 dependencies = [
-    "extraction-plugin",  # the plugin SDK
+    "hansken-extraction-plugin",  # the plugin SDK
     "pydub",
     "logbook",
     "tensorflow",
