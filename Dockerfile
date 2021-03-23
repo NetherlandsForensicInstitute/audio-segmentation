@@ -18,5 +18,5 @@ COPY /plugin /
 
 EXPOSE 8999
 
-ENTRYPOINT ["/bin/sh", "-c"]
-CMD ["serve_plugin 'audio_segmentation.py' 8999"]
+ENTRYPOINT ["/usr/local/bin/serve_plugin"]
+CMD ["audio_segmentation.py", "8999"]
