@@ -7,6 +7,7 @@ from hansken_extraction_plugin.api.author import Author
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
 from hansken_extraction_plugin.api.maturity_level import MaturityLevel
 from hansken_extraction_plugin.api.plugin_info import PluginInfo
+from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_hanskenpy
 from logbook import Logger
 
 log = Logger(__name__)
@@ -69,3 +70,7 @@ class AudioSegmentation(ExtractionPlugin):
                         child_trace.update(data={'raw': temporary_fragment.read()})
                         child_trace.update('file.misc.audioClassification', category)
                         child_trace.build()
+
+
+if __name__ == '__main__':
+    run_with_hanskenpy(AudioSegmentation)

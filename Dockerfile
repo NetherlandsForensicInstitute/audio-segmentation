@@ -11,7 +11,7 @@ LABEL maintainer="fbda@nfi.nl"
 LABEL hansken.extraction.plugin.image="audio-segmentation"
 LABEL hansken.extraction.plugin.name="AudioSegmentation"
 
-COPY /plugin /
+COPY . /
 
 EXPOSE 8999
 
