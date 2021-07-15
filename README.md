@@ -8,10 +8,9 @@ This is merely a container that supports running the classification on Hansken p
 To build, make sure you have acquired a wheel for the `extraction_plugin` package, and put it in your `dist`
 folder.
 
-After that, build the wheel for `audiosegmentation` and build the Docker image:
+After that, build the Docker image:
 
 ```bash
-python setup.py bdist_wheel -d dist
 docker build -t audiosegmentation .
 ```
 
