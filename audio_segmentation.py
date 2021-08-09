@@ -28,18 +28,18 @@ class AudioSegmentation(ExtractionPlugin):
         log.debug(f'returning plugin info: {plugin_info}')
         return plugin_info
 
-    def process(self, trace, context):
+    def process(self, trace, data_context):
         """
         Classify audio fragments, and write subfragments as child traces.
         Also write child traces with all fragments per category concatenated.
 
         :param trace: expected to be an audio file
-        :param context: context
+        :param data_context: data_context
         """
         log.info(f"processing trace {trace.get('name')}")
         with NamedTemporaryFile('wb') as temporary_inputfragment:
             # Try to read in the fragment that we are going to process and store it temporarily
-            temporary_inputfragment.write(trace.open().read(context.data_size()))
+            temporary_inputfragment.write(trace.open().read(data_context.data_size()))
             fragment = pydub.AudioSegment.from_file(temporary_inputfragment.name)
             labeled_fragments = inaSpeechSegmenter.Segmenter(detect_gender=False)(temporary_inputfragment.name)
 
