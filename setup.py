@@ -3,7 +3,7 @@ from setuptools import setup
 
 
 package_name = "audiosegmentation"
-version_string = "2021.3.16"
+version_string = "2022.1.24"
 
 dependencies = [
     "hansken-extraction-plugin",  # the plugin SDK
@@ -23,7 +23,6 @@ setup(
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],

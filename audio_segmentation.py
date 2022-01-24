@@ -4,7 +4,7 @@ from tempfile import NamedTemporaryFile
 import inaSpeechSegmenter
 import pydub
 from hansken_extraction_plugin.api.extraction_plugin import ExtractionPlugin
-from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginInfo
+from hansken_extraction_plugin.api.plugin_info import Author, MaturityLevel, PluginInfo, PluginId, PluginResources
 from hansken_extraction_plugin.runtime.extraction_plugin_runner import run_with_hanskenpy
 from logbook import Logger
 
@@ -17,13 +17,15 @@ class AudioSegmentation(ExtractionPlugin):
         log.info('pluginInfo request')
         plugin_info = PluginInfo(
             self,
-            name='AudioSegmentation',
-            version='2021.8.9',
+            id=PluginId(domain='nfi.nl', category='media', name='AudioSegmentation'),
+            version='2022.1.24',
             description='Audio Segmentation for Hansken',
             author=Author('FBDA', 'fbda@nfi.nl', 'NFI'),
             maturity=MaturityLevel.PROOF_OF_CONCEPT,
             webpage_url='https://hansken.org',
-            matcher='(file.extension=wav OR file.extension=mp3) NOT file.misc.audioClassification AND $data.type=raw'
+            matcher='(file.extension=wav OR file.extension=mp3) NOT file.misc.audioClassification AND $data.type=raw',
+            license="Apache License 2.0",
+            resources=PluginResources.builder().maximum_cpu(0.5).maximum_memory(1024).build(),
         )
         log.debug(f'returning plugin info: {plugin_info}')
         return plugin_info
