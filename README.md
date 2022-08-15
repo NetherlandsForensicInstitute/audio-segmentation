@@ -4,6 +4,9 @@ Extraction plugin for Hansken to classify and segment audio, relying heavily on 
 Please note that this model was not developed or trained by the Netherlands Forensic Institute.
 This is merely a container that supports running the classification on Hansken projects.
 
+This Docker container on its own is not that useful.
+It expects to be called by Hansken's extraction service, and writes its results to a Hansken project.
+
 ## Building
 Build the Docker image:
 
