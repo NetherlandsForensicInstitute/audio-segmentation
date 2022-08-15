@@ -115,7 +115,8 @@ class AudioSegmentation(ExtractionPlugin):
             # Since it's wav, we can slice fragments using byte offsets
             matcher=docker_labels['org.hansken.plugin-info.matcher'],
             license=docker_labels['org.hansken.plugin-info.license'],
-            resources=PluginResources.builder().maximum_cpu(docker_labels['org.hansken.plugin-info.resource-max-cpu']).maximum_memory(docker_labels['org.hansken.plugin-info.resource-max-mem']).build(),
+            resources=PluginResources(maximum_cpu=docker_labels['org.hansken.plugin-info.resource-max-cpu'],
+                                      maximum_memory=docker_labels['org.hansken.plugin-info.resource-max-mem']),
         )
         log.debug(f'returning plugin info: {plugin_info}')
         return plugin_info
