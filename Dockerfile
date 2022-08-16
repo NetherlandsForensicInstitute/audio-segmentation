@@ -17,13 +17,13 @@ LABEL org.hansken.plugin-info.id="nfi.nl/media/AudioSegmentation"
 LABEL org.hansken.plugin-info.id-domain="nfi.nl"
 LABEL org.hansken.plugin-info.id-category="media"
 LABEL org.hansken.plugin-info.id-name="AudioSegmentation"
-LABEL org.hansken.plugin-info.version="2022.8.15"
+LABEL org.hansken.plugin-info.version="2022.8.16"
 # TODO Find out if we can raise an error on docker build once this needs a bump
 #      The value can be imported from the hansken_extraction_plugin Python package
 LABEL org.hansken.plugin-info.api-version="0.5.0"
 LABEL org.hansken.plugin-info.description="Audio segmentation and classification"
 LABEL org.hansken.plugin-info.webpage="https://git.eminjenv.nl/hanskaton/extraction-plugins/audio-segmentation"
-LABEL org.hansken.plugin-info.matcher="type:audio NOT prediction.modelName=inaSpeechSegmenter AND $data.type=transcoded"
+LABEL org.hansken.plugin-info.matcher='type:audio NOT prediction.modelName=inaSpeechSegmenter AND $data.type=transcoded'
 LABEL org.hansken.plugin-info.license="Apache License 2.0"
 LABEL org.hansken.plugin-info.maturity-level="PRODUCTION_READY"
 LABEL org.hansken.plugin-info.author-name="Bart Broere"
