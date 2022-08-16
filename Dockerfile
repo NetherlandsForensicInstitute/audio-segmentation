@@ -17,7 +17,7 @@ LABEL org.hansken.plugin-info.id="nfi.nl/media/AudioSegmentation"
 LABEL org.hansken.plugin-info.id-domain="nfi.nl"
 LABEL org.hansken.plugin-info.id-category="media"
 LABEL org.hansken.plugin-info.id-name="AudioSegmentation"
-LABEL org.hansken.plugin-info.version="2022.8.15"
+LABEL org.hansken.plugin-info.version="2022.8.16"
 # TODO Find out if we can raise an error on docker build once this needs a bump
 #      The value can be imported from the hansken_extraction_plugin Python package
 LABEL org.hansken.plugin-info.api-version="0.5.0"
