@@ -129,12 +129,12 @@ class AudioSegmentation(ExtractionPlugin):
         :param data_context: data_context
         """
         log.info(f"processing trace {trace.get('name')}")
-        byte_dictionary = build_byte_dictionary(trace.open().read(data_context.data_size()))
+        byte_dictionary = build_byte_dictionary(trace.open().read(data_context.data_size))
         with NamedTemporaryFile('wb') as temporary_inputfragment:
             # Try to read in the fragment that we are going to process and store it temporarily
-            temporary_inputfragment.write(trace.open().read(data_context.data_size()))
+            temporary_inputfragment.write(trace.open().read(data_context.data_size))
             labeled_fragments = CustomSegmenter()(temporary_inputfragment.name)
-            inputfragment = wave.open(BytesIO(trace.open().read(data_context.data_size())), 'rb')
+            inputfragment = wave.open(BytesIO(trace.open().read(data_context.data_size)), 'rb')
 
             # This loop writes out each individual fragment as a child trace
             for i, (label, start, end) in enumerate(labeled_fragments):
