@@ -13,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}   
+    - uses: actions/checkout@v3
     - name: Build the Docker image    
       run: |
         docker build -t audio-segmentation .
-        echo "${GITHUB_TOKEN}" | docker login ghcr.io -u netherlandsforensicinstitute --password-stdin
         docker tag audio-segmentation ghcr.io/netherlandsforensicinstitute/audio-segmentation:latest
         docker push ghcr.io/netherlandsforensicinstitute/audio-segmentation:latest
