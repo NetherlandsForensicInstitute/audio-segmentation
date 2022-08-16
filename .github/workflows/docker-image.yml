@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build -t audio-segmentation .
+      run: |
+        docker build -t audio-segmentation .
+        docker tag audio-segmentation ghcr.io/NetherlandsForensicInstitute/audio-segmentation:latest
+        docker push ghcr.io/NetherlandsForensicInstitute/audio-segmentation:latest
