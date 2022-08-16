@@ -99,8 +99,7 @@ class AudioSegmentation(ExtractionPlugin):
         # To update plugin info, update the Dockerfile.
         # This has been done to maintain a single source of truth for all these values
         plugin_info = PluginInfo(
-            self,
-            id=PluginId(domain=docker_labels["org.hansken.plugin-info.id-domain"], 
+            id=PluginId(domain=docker_labels["org.hansken.plugin-info.id-domain"],
                         category=docker_labels["org.hansken.plugin-info.id-category"],
                         name=docker_labels["org.hansken.plugin-info.id-name"]),
             version=VERSION,
