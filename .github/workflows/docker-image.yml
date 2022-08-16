@@ -17,5 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build -t audio-segmentation .
+        echo "${GITHUB_TOKEN}" | docker login ghcr.io -u netherlandsforensicinstitute --password-stdin
         docker tag audio-segmentation ghcr.io/netherlandsforensicinstitute/audio-segmentation:latest
         docker push ghcr.io/netherlandsforensicinstitute/audio-segmentation:latest
